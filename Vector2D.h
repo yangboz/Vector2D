@@ -14,8 +14,8 @@
 @interface Vector2D : NSObject <NSCopying>
 {
 @public
-  float x;
-  float y;
+    float x;
+    float y;
 }
 
 // Class Methods
@@ -43,8 +43,11 @@
 
 - (NSString*) description;
 
+- (void) setLength:(float)value;
 - (float) length;
 - (float) lengthSquared;
+- (void) setAngle:(float)value;
+- (float) angle;
 
 - (BOOL) isEqual:(Vector2D*)other;
 - (BOOL) isZero;
@@ -62,5 +65,8 @@
 - (float) dot:(Vector2D*)other;
 - (Vector2D*) perp;
 - (float) perpDot:(Vector2D*)other;
+
+
+-(Vector2D *)truncateV2D:(float)max;
 
 @end
